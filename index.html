@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- CSS Stylesheets -->
+<style>
+        body {
+            background-image: url('images/globe.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        </style>
+<link rel="stylesheet" href="css/master.css">
+<title>API Project</title>
+</head>
+
+<body>
+<h1 class="head">WEATHER</h1>
+   <h1>Weather Forecast</h1>
+   <form action="/submit" method="post">
+    <select id="selectField" name="selectedOption" onchange = 'callApi()' required>
+    <option value="" disabled selected>--Select a city--</option>
+        <option value="Amsterdam">Amsterdam</option>
+        <option value="Ankara">Ankara</option>
+        <option value="Athens">Athens</option>
+        <option value="Kampala">Kampala</option>
+        <!-- Add more options as needed -->
+    </select>
+   </form>
+   <div id="weatherInfo"></div>
+  
+    
+</body>
+
+<footer>
+    <p class="copyright-text" id ='copyright'> </p>
+</footer>
+<script>
+    const d = new Date();
+    let year = d.getFullYear();
+    document.getElementById('copyright').innerHTML = 'Kayanga Keneth © Copyright  '+ year;
+    </script>
+<script src="js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</html>
